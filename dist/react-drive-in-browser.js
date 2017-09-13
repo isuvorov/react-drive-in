@@ -10,7 +10,7 @@ var ReactDriveIn = (function (React) { 'use strict';
     }
   };
 
-  babelHelpers.createClass = (function () {
+  babelHelpers.createClass = function () {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
         var descriptor = props[i];
@@ -26,7 +26,7 @@ var ReactDriveIn = (function (React) { 'use strict';
       if (staticProps) defineProperties(Constructor, staticProps);
       return Constructor;
     };
-  })();
+  }();
 
   babelHelpers.inherits = function (subClass, superClass) {
     if (typeof superClass !== "function" && superClass !== null) {
@@ -90,7 +90,7 @@ var ReactDriveIn = (function (React) { 'use strict';
   var setStyles = function setStyles(el, props) {
 
     var cssString = "";
-    var p = undefined;
+    var p = void 0;
 
     for (p in props) {
       cssString += p + ":" + props[p] + ";";
@@ -101,8 +101,8 @@ var ReactDriveIn = (function (React) { 'use strict';
 
   var findPoster = function findPoster(playlist) {
 
-    var poster = undefined;
-    var item = undefined;
+    var poster = void 0;
+    var item = void 0;
 
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
@@ -163,7 +163,7 @@ var ReactDriveIn = (function (React) { 'use strict';
   var createEl = function createEl(name, props) {
 
     var el = document.createElement(name);
-    var prop = undefined;
+    var prop = void 0;
 
     for (prop in props) {
       el[prop] = props[prop];
@@ -212,11 +212,12 @@ var ReactDriveIn = (function (React) { 'use strict';
   };
 
   var makePlaylist = function makePlaylist(rawPlaylist) {
-    var depth = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
+    var depth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
 
     var playlist = [];
 
-    var item = undefined;
+    var item = void 0;
 
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
@@ -225,6 +226,7 @@ var ReactDriveIn = (function (React) { 'use strict';
     try {
       for (var _iterator = rawPlaylist[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         item = _step.value;
+
 
         if (item.constructor === Object) {
           playlist.push([item]);
@@ -265,7 +267,7 @@ var ReactDriveIn = (function (React) { 'use strict';
     makePlaylistItem: makePlaylistItem
   };
 
-  var index = (function (module) {
+  var index = function (module) {
     var exports = module.exports;
     'use strict';
 
@@ -427,15 +429,15 @@ var ReactDriveIn = (function (React) { 'use strict';
      */
     module.exports = Jvent;
     return module.exports;
-  })({ exports: {} });
+  }({ exports: {} });
 
-  var Timer = (function (_Jvent) {
+  var Timer = function (_Jvent) {
     babelHelpers.inherits(Timer, _Jvent);
 
     function Timer(callback, delay) {
       babelHelpers.classCallCheck(this, Timer);
 
-      var _this = babelHelpers.possibleConstructorReturn(this, Object.getPrototypeOf(Timer).call(this));
+      var _this = babelHelpers.possibleConstructorReturn(this, (Timer.__proto__ || Object.getPrototypeOf(Timer)).call(this));
 
       _this.callback = callback;
       _this.remaining = delay;
@@ -485,15 +487,15 @@ var ReactDriveIn = (function (React) { 'use strict';
       }
     }]);
     return Timer;
-  })(index);
+  }(index);
 
-  var DriveIn = (function (_Jvent) {
+  var DriveIn = function (_Jvent) {
     babelHelpers.inherits(DriveIn, _Jvent);
 
     function DriveIn() {
       babelHelpers.classCallCheck(this, DriveIn);
 
-      var _this = babelHelpers.possibleConstructorReturn(this, Object.getPrototypeOf(DriveIn).call(this));
+      var _this = babelHelpers.possibleConstructorReturn(this, (DriveIn.__proto__ || Object.getPrototypeOf(DriveIn)).call(this));
 
       _this._listeners = [];
 
@@ -626,10 +628,10 @@ var ReactDriveIn = (function (React) { 'use strict';
 
         var mediaEl = this.mediaEl;
         var sourceEls = [];
-        var source = undefined;
-        var sourceEl = undefined;
-        var posterSrc = undefined;
-        var canPlayType = undefined;
+        var source = void 0;
+        var sourceEl = void 0;
+        var posterSrc = void 0;
+        var canPlayType = void 0;
 
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
@@ -690,8 +692,8 @@ var ReactDriveIn = (function (React) { 'use strict';
     }, {
       key: "_playImageItem",
       value: function _playImageItem(item, itemNum) {
-        var source = undefined;
-        var src = undefined;
+        var source = void 0;
+        var src = void 0;
 
         if (item && item.length) {
           var _iteratorNormalCompletion2 = true;
@@ -783,7 +785,7 @@ var ReactDriveIn = (function (React) { 'use strict';
       key: "_removeAllListeners",
       value: function _removeAllListeners() {
         var listeners = this._listeners;
-        var listen = undefined;
+        var listen = void 0;
 
         var _iteratorNormalCompletion3 = true;
         var _didIteratorError3 = false;
@@ -1048,7 +1050,7 @@ var ReactDriveIn = (function (React) { 'use strict';
     }, {
       key: "_createMediaEl",
       value: function _createMediaEl() {
-        var mediaEl = undefined;
+        var mediaEl = void 0;
 
         if (this.mediaEl) {
           this._cleanup();
@@ -1089,7 +1091,8 @@ var ReactDriveIn = (function (React) { 'use strict';
     }, {
       key: "init",
       value: function init() {
-        var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
 
         this.isTouch = options.isTouch !== undefined ? options.isTouch : "ontouchstart" in window;
 
@@ -1256,15 +1259,15 @@ var ReactDriveIn = (function (React) { 'use strict';
       }
     }]);
     return DriveIn;
-  })(index);
+  }(index);
 
-  var ReactDriveIn = (function (_React$Component) {
+  var ReactDriveIn = function (_React$Component) {
     babelHelpers.inherits(ReactDriveIn, _React$Component);
 
     function ReactDriveIn(props) {
       babelHelpers.classCallCheck(this, ReactDriveIn);
 
-      var _this = babelHelpers.possibleConstructorReturn(this, Object.getPrototypeOf(ReactDriveIn).call(this, props));
+      var _this = babelHelpers.possibleConstructorReturn(this, (ReactDriveIn.__proto__ || Object.getPrototypeOf(ReactDriveIn)).call(this, props));
 
       _this.state = {
         className: props.className,
@@ -1337,12 +1340,13 @@ var ReactDriveIn = (function (React) { 'use strict';
       value: function componentDidMount() {
         var _this2 = this;
 
-        var playlist = undefined;
+        var playlist = void 0;
 
         this.DI.init({
           el: this.getMedia(),
           slideshow: this.props.slideshow,
-          startPaused: this.props.paused
+          startPaused: this.props.paused,
+          isTouch: this.props.isTouch
         });
 
         var options = {
@@ -1433,7 +1437,7 @@ var ReactDriveIn = (function (React) { 'use strict';
       }
     }]);
     return ReactDriveIn;
-  })(React.Component);
+  }(React.Component);
 
   ReactDriveIn.displayName = "DriveIn";
 
