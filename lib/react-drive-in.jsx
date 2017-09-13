@@ -72,7 +72,8 @@ class ReactDriveIn extends React.Component {
     this.DI.init({
       el: this.getMedia(),
       slideshow: this.props.slideshow,
-      startPaused: this.props.paused
+      startPaused: this.props.paused,
+      isTouch: this.props.isTouch
     });
 
     const options = {
