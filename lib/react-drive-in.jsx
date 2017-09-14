@@ -80,8 +80,7 @@ class ReactDriveIn extends React.Component {
       mute: this.props.mute,
       loop: this.props.loop,
       loopPlaylistItems: this.props.loopPlaylistItems,
-      poster: this.props.poster,
-      isTouch: this.props.isTouch
+      poster: this.props.poster
     };
 
     if (this.props.showPlaylist) {
