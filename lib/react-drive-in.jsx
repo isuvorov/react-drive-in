@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import DriveIn from "drive-in";
 
 class ReactDriveIn extends React.Component {
@@ -157,26 +158,26 @@ class ReactDriveIn extends React.Component {
 ReactDriveIn.displayName = "DriveIn";
 
 ReactDriveIn.propTypes = {
-  show: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.array
+  show: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
   ]),
-  showPlaylist: React.PropTypes.oneOfType([React.PropTypes.array]),
-  poster: React.PropTypes.string,
-  mute: React.PropTypes.bool,
-  paused: React.PropTypes.bool,
-  loop: React.PropTypes.bool,
-  loopPlaylistItems: React.PropTypes.bool,
-  playbackRate: React.PropTypes.number,
-  slideshow: React.PropTypes.bool,
-  onPlaying: React.PropTypes.func,
-  onPause: React.PropTypes.func,
-  onTime: React.PropTypes.func,
-  onTimeFrequency: React.PropTypes.number,
-  onCanPlay: React.PropTypes.func,
-  isTouch: React.PropTypes.func,
-  volume: React.PropTypes.number,
-  className: React.PropTypes.string
+  showPlaylist: PropTypes.oneOfType([PropTypes.array]),
+  poster: PropTypes.string,
+  mute: PropTypes.bool,
+  paused: PropTypes.bool,
+  loop: PropTypes.bool,
+  loopPlaylistItems: PropTypes.bool,
+  playbackRate: PropTypes.number,
+  slideshow: PropTypes.bool,
+  onPlaying: PropTypes.func,
+  onPause: PropTypes.func,
+  onTime: PropTypes.func,
+  onTimeFrequency: PropTypes.number,
+  onCanPlay: PropTypes.func,
+  isTouch: PropTypes.func,
+  volume: PropTypes.number,
+  className: PropTypes.string
 };
 
 ReactDriveIn.defaultProps = {

@@ -33,7 +33,7 @@
     "node": ">=4.0.0"
   },
   "peerDependencies": {
-    "react": "^0.14.3"
+    "react": "^16.6.0"
   },
   "devDependencies": {
     "babel": "6.1.18",
@@ -49,15 +49,16 @@
     "eslint-plugin-react": "3.10.0",
     "less": "2.5.3",
     "less-plugin-autoprefix": "1.5.1",
-    "react": "0.14.3",
-    "react-dom": "0.14.3",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
     "react-drive-in": "1.7.1",
     "rollup": "0.21.0",
     "rollup-plugin-babel": "2.1.0",
     "rollup-plugin-commonjs": "1.4.0",
     "rollup-plugin-inject": "1.2.0",
     "rollup-plugin-npm": "1.1.0",
-    "watch": "0.16.0"
+    "watch": "0.16.0",
+    "prop-types": "15.6.2"
   },
   "author": {
     "name": "Ronik Design",
@@ -74,7 +75,7 @@
     "url": "https://github.com/ronik-design/react-drive-in/issues"
   },
   "homepage": "https://github.com/ronik-design/react-drive-in",
-  "dependencies": {
-    "drive-in": "git+https://github.com/jcmandersson/drive-in"
+  "dependencies": {    
+    "drive-in": "^1.5.2"
   }
 }
