@@ -75,7 +75,7 @@
     "url": "https://github.com/ronik-design/react-drive-in/issues"
   },
   "homepage": "https://github.com/ronik-design/react-drive-in",
-  "dependencies": {    
+  "dependencies": {
     "drive-in": "^1.5.2"
   }
 }

@@ -2,6 +2,8 @@
 
 var React = require('react');
 React = 'default' in React ? React['default'] : React;
+var PropTypes = require('prop-types');
+PropTypes = 'default' in PropTypes ? PropTypes['default'] : PropTypes;
 var DriveIn = require('drive-in');
 DriveIn = 'default' in DriveIn ? DriveIn['default'] : DriveIn;
 
@@ -148,8 +150,7 @@ var ReactDriveIn = function (_React$Component) {
         mute: this.props.mute,
         loop: this.props.loop,
         loopPlaylistItems: this.props.loopPlaylistItems,
-        poster: this.props.poster,
-        isTouch: this.props.isTouch
+        poster: this.props.poster
       };
 
       if (this.props.showPlaylist) {
@@ -237,23 +238,23 @@ var ReactDriveIn = function (_React$Component) {
 ReactDriveIn.displayName = "DriveIn";
 
 ReactDriveIn.propTypes = {
-  show: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.array]),
-  showPlaylist: React.PropTypes.oneOfType([React.PropTypes.array]),
-  poster: React.PropTypes.string,
-  mute: React.PropTypes.bool,
-  paused: React.PropTypes.bool,
-  loop: React.PropTypes.bool,
-  loopPlaylistItems: React.PropTypes.bool,
-  playbackRate: React.PropTypes.number,
-  slideshow: React.PropTypes.bool,
-  onPlaying: React.PropTypes.func,
-  onPause: React.PropTypes.func,
-  onTime: React.PropTypes.func,
-  onTimeFrequency: React.PropTypes.number,
-  onCanPlay: React.PropTypes.func,
-  isTouch: React.PropTypes.func,
-  volume: React.PropTypes.number,
-  className: React.PropTypes.string
+  show: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  showPlaylist: PropTypes.oneOfType([PropTypes.array]),
+  poster: PropTypes.string,
+  mute: PropTypes.bool,
+  paused: PropTypes.bool,
+  loop: PropTypes.bool,
+  loopPlaylistItems: PropTypes.bool,
+  playbackRate: PropTypes.number,
+  slideshow: PropTypes.bool,
+  onPlaying: PropTypes.func,
+  onPause: PropTypes.func,
+  onTime: PropTypes.func,
+  onTimeFrequency: PropTypes.number,
+  onCanPlay: PropTypes.func,
+  isTouch: PropTypes.func,
+  volume: PropTypes.number,
+  className: PropTypes.string
 };
 
 ReactDriveIn.defaultProps = {
